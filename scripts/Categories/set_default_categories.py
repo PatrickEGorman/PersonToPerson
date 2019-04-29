@@ -12,7 +12,7 @@ category_appliances.save()
 
 category_athletic_equipment = Category()
 category_athletic_equipment.category_url_name = 'athletic_equipment'
-category_athletic_equipment.display_name = 'AthleticEquipment'
+category_athletic_equipment.display_name = 'Athletic Equipment'
 category_athletic_equipment.craigslist_url_adder = 'sporting-goods/search/sga'
 category_athletic_equipment.save()
 
