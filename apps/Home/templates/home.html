@@ -22,7 +22,7 @@
       <h2>Items For Sale</h2>
         {% for category in categories %}
             {%  if category.type == 'for_sale' %}
-                <a href="/posting-organizer/category/{{ category.category_url_name }}">{{ category.display_name }}</a><br>
+                <a href="/posting_organizer/category/{{ category.category_url_name }}">{{ category.display_name }}</a><br>
             {% endif %}
         {% endfor %}
       <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>

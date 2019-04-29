@@ -9,10 +9,6 @@ class Price(models.Model):
     acceptTrade = models.BooleanField(default=False)
 
 
-class Image(models.Model):
-    url = models.FloatField(default=True)
-
-
 class ItemProperty(models.Model):
     propertyName = models.TextField(default=None, blank=False)
     propertyValue = models.TextField(default='')

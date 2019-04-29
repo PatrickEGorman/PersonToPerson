@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from apps.Home.views import home
+from apps.Home.views import home, set_location
 
 urlpatterns = [
     path('', home),
-    path('posting-organizer/', include('apps.PostingOrganizer.urls'))
+    path('set_location', set_location),
+    path('posting_organizer/', include('apps.PostingOrganizer.urls')),
+    path('admin/', admin.site.urls),
 ]
