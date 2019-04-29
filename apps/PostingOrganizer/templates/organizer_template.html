@@ -1,7 +1,7 @@
 {% extends 'base_template.html' %}
 
 {% block page_header %}
-  Home Page
+  For Sale: {{ category_to_display }}
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
 </div>
 
 <div class="container">
-  <h2>Items For Sale</h2>
+  <h2>{{ category_to_display }} For Sale</h2>
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-4">

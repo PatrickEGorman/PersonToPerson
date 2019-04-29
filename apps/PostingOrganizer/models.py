@@ -1,5 +1,8 @@
 from django.db import models
 
+from apps.PostingOrganizer.exceptions import InvalidCategoryException
+from apps.PostingOrganizer.util import category_to_display
+
 
 class Price(models.Model):
     value = models.FloatField(default=None)
@@ -26,3 +29,7 @@ class SaleItem(models.Model):
     price = models.OneToOneField(
         Price, on_delete=models.CASCADE
     )
+
+class Category(models.Model):
+    category_name = models.TextField(default=None, blank=False)
+    display_name = models.TextField(default='')
