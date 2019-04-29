@@ -27,6 +27,7 @@ class SaleItem(models.Model):
         Price, on_delete=models.CASCADE
     )
 
+
 class Category(models.Model):
     category_url_name = models.TextField(default=None, primary_key=True, blank=False)
     display_name = models.TextField(default=None, blank=False)

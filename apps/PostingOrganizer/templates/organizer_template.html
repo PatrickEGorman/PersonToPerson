@@ -7,44 +7,41 @@
 {% block content %}
 
 <div class="jumbotron">
-  <div class="container">
-    <h1 class="display-3">Hello, world!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-  </div>
+    {% if category.type == "for_sale" %}
+        <h2>{{ category.display_name }} For Sale</h2>
+    {% endif %}
 </div>
 
 <div class="container">
-  <h2>{{ category.display_name }} For Sale</h2>
   <!-- Example row of columns -->
-   <div class="row mb-3">
+   <div class="row mb-4">
     <div class="col-4 themed-grid-col">.col-4</div>
     <div class="col-4 themed-grid-col">.col-4</div>
     <div class="col-4 themed-grid-col">.col-4</div>
   </div>
 
-  <div class="row mb-3">
-    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
-    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
-    <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
+  <div class="row mb-4">
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
   </div>
 
-  <div class="row mb-3">
-    <div class="col-md-4 themed-grid-col">.col-md-4</div>
-    <div class="col-md-4 themed-grid-col">.col-md-4</div>
-    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+  <div class="row mb-4">
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
   </div>
 
-  <div class="row mb-3">
-    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
-    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
-    <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
+  <div class="row mb-4">
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
   </div>
 
-  <div class="row mb-3">
-    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
-    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
-    <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
+  <div class="row mb-4">
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
+    <div class="col-4 themed-grid-col">.col-4</div>
   </div>
 
   <hr>
