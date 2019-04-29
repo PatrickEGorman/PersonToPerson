@@ -31,3 +31,4 @@ class Category(models.Model):
     category_url_name = models.TextField(default=None, primary_key=True, blank=False)
     display_name = models.TextField(default=None, blank=False)
     craigslist_url_adder = models.TextField(default=None)
+    type = models.TextField(default='for_sale')
