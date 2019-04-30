@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
 
-from apps.MarketPlaces.models import Location
 from apps.PostingOrganizer.models import Category
 
 
@@ -11,8 +10,6 @@ def home(request):
     return HttpResponse(template.render({'categories': categories}, request))
 
 
-def set_location(request):
-    response = HttpResponse('')
-    response.set_cookie('location_lat', request.POST.get('lat', None))
-    response.set_cookie('location_long', request.POST.get('long', None))
-    return HttpResponse('')
+def privacy_policy(request):
+    template = loader.get_template('privacy.html')
+    return HttpResponse(template.render({}, request))

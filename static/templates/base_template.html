@@ -44,9 +44,6 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="login_facebook" href="#">Sign In With Facebook</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
       <li class="nav-item dropdown">
@@ -57,14 +54,18 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" style="visibility: hidden" id="login_facebook" onclick="login()" href="#">Sign In With Facebook</a>
+      </li>
       <li class="navbar-text">
+        <a class="nav-item">
+          {% block page_header %}
 
-        {% block page_header %}
-
-        {% endblock %}
-
+          {% endblock %}
+        </a>
       </li>
     </ul>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -80,7 +81,7 @@
 </main>
 
 <footer class="container">
-  <p>&copy; Company 2017-2019</p>
+  <a href="/privacy_policy">Privacy Policy</a>
 </footer>
     <script>
       window.fbAsyncInit = function() {
@@ -90,7 +91,11 @@
           xfbml            : true,
           version          : 'v3.2'
         });
-        login();
+        document.getElementById('login_facebook').style.visibility = "visible";
+        FB.api('/me', function(response) {
+            console.log(JSON.stringify(response));
+        });
+        checkLoginState();
       };
 
     </script>

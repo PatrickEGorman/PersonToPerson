@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from apps.Home.views import home, set_location
+from apps.Home.views import home, set_location, privacy_policy
+from apps.MarketPlaces.views import set_facebook_access_token
 
 urlpatterns = [
     path('', home),
-    path('set_location', set_location),
     path('posting_organizer/', include('apps.PostingOrganizer.urls')),
+    path('privacy_policy', privacy_policy),
     path('admin/', admin.site.urls),
 ]
