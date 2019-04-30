@@ -1,6 +1,7 @@
 <!doctype html>
 
 {% load staticfiles %}
+{% load render_bundle from webpack_loader %}
 
 <html lang="en">
   <head>
@@ -83,22 +84,8 @@
 <footer class="container">
   <a href="/privacy_policy">Privacy Policy</a>
 </footer>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '298536934407119',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v3.2'
-        });
-        document.getElementById('login_facebook').style.visibility = "visible";
-        FB.api('/me', function(response) {
-            console.log(JSON.stringify(response));
-        });
-        checkLoginState();
-      };
+     {% render_bundle 'main' %}
 
-    </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
@@ -106,7 +93,6 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src={% static '/lib/jQuery/jquery-3.4.0.min.js' %}></script>
     <script src="{% static '/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static '/js/base_template.js' %}"></script>
     <script src="{% static '/js/Api/Facebook/login.js' %}"></script>
   </body>
 </html>

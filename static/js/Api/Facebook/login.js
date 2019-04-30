@@ -15,7 +15,6 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
     if(response.status === 'connected'){
         document.cookie = "facebook_access_token="+response.authResponse.facebook_access_token;
-        $.post('/set_facebook_access_token', data={'facebook_access_token': response.authResponse.accessToken})
     }
     else{
         console.log('do something here');

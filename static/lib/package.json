@@ -1,0 +1,34 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --progress --colors --mode development",
+    "watch": "webpack --config webpack.config.js --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickEGorman/PersonToPerson.git"
+  },
+  "author": "Patrick E Gorman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickEGorman/PersonToPerson/issues"
+  },
+  "homepage": "https://github.com/PatrickEGorman/PersonToPerson#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.30.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

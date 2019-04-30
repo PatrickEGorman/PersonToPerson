@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apps.Home',
     'apps.MarketPlaces',
     'apps.PostingOrganizer',
+    'webpack_loader',
 
 ]
 
@@ -123,3 +124,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'js/bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'static/lib/webpack-stats.json'),
+    }
+}
