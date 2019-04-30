@@ -6,12 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Jumbotron Template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/jumbotron/">
+    <title>PersonToPerson</title>
 
     <!-- Bootstrap core CSS -->
 <link href="{% static 'lib/bootstrap-4.3.1-dist/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,7 +44,7 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" id="login_facebook" href="#">Sign In With Facebook</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -86,8 +82,25 @@
 <footer class="container">
   <p>&copy; Company 2017-2019</p>
 </footer>
+      <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '298536934407119',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+        login();
+      };
+
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src={% static '/lib/jQuery/jquery-3.4.0.min.js' %}></script>
     <script src="{% static '/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static '/js/base_template.js' %}"></script>
+    <script src="{% static '/js/Api/Facebook/login.js' %}"></script>
   </body>
 </html>
