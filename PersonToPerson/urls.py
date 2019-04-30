@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from apps.Home.views import home, set_location, privacy_policy
-from apps.MarketPlaces.views import set_facebook_access_token
+from apps.Home.views import home, privacy_policy
 
 urlpatterns = [
     path('', home),
