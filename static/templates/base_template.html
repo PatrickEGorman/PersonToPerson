@@ -85,12 +85,24 @@
   <a href="/privacy_policy">Privacy Policy</a>
 </footer>
      {% render_bundle 'main' %}
-
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '298536934407119',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+        document.getElementById('login_facebook').style.visibility = "visible";
+        // FB.api('/me', function(response) {
+        //     console.log(JSON.stringify(response));
+        // });
+        checkLoginState();
+      };
+    </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src={% static '/lib/jQuery/jquery-3.4.0.min.js' %}></script>
     <script src="{% static '/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static '/js/Api/Facebook/login.js' %}"></script>
