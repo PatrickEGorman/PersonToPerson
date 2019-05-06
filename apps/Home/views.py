@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import loader
 
 from apps.PostingOrganizer.models import Category
@@ -7,7 +8,7 @@ from apps.PostingOrganizer.models import Category
 def home(request):
     template = loader.get_template('home.html')
     categories = Category.objects.all()
-    return HttpResponse(template.render({'categories': categories}, request))
+    return render(request, 'home.html', {'categories': categories})
 
 
 def privacy_policy(request):

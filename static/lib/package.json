@@ -19,16 +19,24 @@
   },
   "homepage": "https://github.com/PatrickEGorman/PersonToPerson#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "loader": "^2.1.1",
     "webpack": "^4.30.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.3.1"
+    "webpack-cli": "^3.3.2"
   },
   "dependencies": {
+    "a": "^2.1.2",
+    "app.": "0.0.6",
+    "browser": "^0.2.6",
+    "for": "^0.1.0",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   }
 }

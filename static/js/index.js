@@ -1,5 +1,5 @@
-import React from '../lib/node_modules/react'
-import ReactDOM from '../lib/node_modules/react-dom'
+import React, { Component } from '../lib/node_modules/react';
+import ReactDOM from '../lib/node_modules/react-dom';
 
 
 function getLocation() {
@@ -15,3 +15,15 @@ function showPosition(position) {
       document.cookie = "long="+position.coords.longitude;
   })
 }
+
+class Test extends Component{
+   render(){
+      return(
+         <div>
+            <h1>Test</h1>
+         </div>
+      );
+   }
+}
+
+ReactDOM.render(<Test />, document.getElementById('test'));
