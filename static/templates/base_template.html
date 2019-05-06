@@ -55,8 +55,8 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" style="visibility: hidden" id="login_facebook" onclick="login()" href="#">Sign In With Facebook</a>
+      <li class="nav-item" id="facebookLogoutLogin">
+
       </li>
       <li class="navbar-text">
         <a class="nav-item">
@@ -78,6 +78,9 @@
 
 {% block content %}
 {% endblock %}
+<div id="test">
+
+</div>
 
 </main>
 
@@ -86,25 +89,22 @@
 </footer>
      {% render_bundle 'main' %}
     <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '298536934407119',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v3.2'
-        });
-        document.getElementById('login_facebook').style.visibility = "visible";
-        // FB.api('/me', function(response) {
-        //     console.log(JSON.stringify(response));
-        // });
-        checkLoginState();
-      };
+        let facebookLoadEvent = new Event("facebookLoaded");
+
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId            : '298536934407119',
+              autoLogAppEvents : true,
+              xfbml            : true,
+              version          : 'v3.2'
+            });
+            document.dispatchEvent(facebookLoadEvent);
+          };
     </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src={% static '/lib/jQuery/jquery-3.4.0.min.js' %}></script>
     <script src="{% static '/lib/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static '/js/Api/Facebook/login.js' %}"></script>
   </body>
 </html>

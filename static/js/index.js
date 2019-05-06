@@ -16,14 +16,37 @@ function showPosition(position) {
   })
 }
 
-class Test extends Component{
+function logout(){
+
+}
+
+class LogoutFacebookOption extends Component{
    render(){
       return(
-         <div>
-            <h1>Test</h1>
-         </div>
+         <a className="nav-link" id="logout_facebook" onClick={logout()} href="#">Log Out</a>
       );
    }
 }
 
-ReactDOM.render(<Test />, document.getElementById('test'));
+class LoginFacebookOption extends Component{
+   render(){
+      return(
+          <a className="nav-link" id="login_facebook" onClick={login()} href="#">Sign In With
+              Facebook</a>
+      );
+   }
+}
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    if(response.status === 'connected'){
+        document.cookie = "facebook_access_token="+response.authResponse.facebook_access_token;
+        ReactDOM.render(<LogoutFacebookOption />, document.getElementById('facebookLogoutLogin'));
+    }
+    else{
+        ReactDOM.render(<LoginFacebookOption />, document.getElementById('facebookLogoutLogin'));
+    }
+  });
+}
+
+document.addEventListener('facebookLoaded', function (e) {checkLoginState();});
