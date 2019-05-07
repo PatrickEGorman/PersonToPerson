@@ -4,6 +4,10 @@
 migrations/
 */migrations/
 
+node_modules/
+static/lib/webpack-stats.json
+bundles/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
