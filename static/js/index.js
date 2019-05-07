@@ -16,22 +16,20 @@ function showPosition(position) {
   })
 }
 
-function logout(){
-
-}
-
-class LogoutFacebookOption extends Component{
-   render(){
-      return(
-         <a className="nav-link" id="logout_facebook" onClick={logout()} href="#">Log Out</a>
-      );
-   }
+function login() {
+    FB.login(function (response) {
+        if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    });
 }
 
 class LoginFacebookOption extends Component{
    render(){
       return(
-          <a className="nav-link" id="login_facebook" onClick={login()} href="#">Sign In With
+          <a className="nav-link" id="login_facebook" onClick={login} href="#">Sign In With
               Facebook</a>
       );
    }
@@ -41,7 +39,6 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
     if(response.status === 'connected'){
         document.cookie = "facebook_access_token="+response.authResponse.facebook_access_token;
-        ReactDOM.render(<LogoutFacebookOption />, document.getElementById('facebookLogoutLogin'));
     }
     else{
         ReactDOM.render(<LoginFacebookOption />, document.getElementById('facebookLogoutLogin'));
@@ -50,3 +47,5 @@ function checkLoginState() {
 }
 
 document.addEventListener('facebookLoaded', function (e) {checkLoginState();});
+
+
