@@ -1,16 +1,9 @@
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.template import loader
-
-from apps.PostingOrganizer.models import Category
+from PersonToPerson.util import render
 
 
 def home(request):
-    template = loader.get_template('home.html')
-    categories = Category.objects.all()
-    return render(request, 'home.html', {'categories': categories})
+    return render(request, 'home.html', {})
 
 
 def privacy_policy(request):
-    template = loader.get_template('privacy.html')
-    return HttpResponse(template.render({}, request))
+    return render(request, 'privacy.html', {})

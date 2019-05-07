@@ -1,12 +1,11 @@
-from django.http import HttpResponse
-from django.template import loader
-
+from PersonToPerson.util import render
 from apps.PostingOrganizer.models import Category
 
 
-def generate_template(request, category_url):
-    template = loader.get_template('organizer_template.html')
+def item_category(request, category_url):
     category = Category.objects.get(category_url_name=category_url)
-    return HttpResponse(template.render({
-        'category': category}, request)
-    )
+    return render(request, 'organizer_template.html', {'category': category})
+
+
+def view_all(request):
+    return render(request, 'organizer_template.html', {'category': 'view_all'})
