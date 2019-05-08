@@ -6,6 +6,10 @@ node_modules/
 webpack-stats.json
 bundles/
 
+node_modules/
+static/lib/webpack-stats.json
+bundles/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
