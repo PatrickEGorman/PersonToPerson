@@ -5,7 +5,12 @@ var BundleTracker = require('webpack-bundle-tracker');
 module.exports = {
   context: __dirname,
 
-  entry: {index: '../js/index'},
+  entry: {
+    index: '../js/index',
+    facebook_login: '../js/Api/Facebook/login',
+    generic_get_posts: '../js/Api/Generic/get_posts',
+    facebook_get_posts: '../js/Api/Facebook/get_posts'
+  },
   mode:'development',
 
   output: {
@@ -33,7 +38,16 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
+    alias: {
+      react: path.resolve(__dirname, 'node_modules/react'),
+      react_dom: path.resolve(__dirname, 'node_modules/react-dom'),
+      nightmare: path.resolve(__dirname, 'node_modules/nightmare')
+    }
+  },
+  node: {
+    fs: 'empty',
+    child_process: 'empty'
   }
 
 };
