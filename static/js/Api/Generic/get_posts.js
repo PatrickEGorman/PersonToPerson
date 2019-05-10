@@ -1,12 +1,17 @@
 
-let Nightmare = require('nightmare');
-const nightmare = Nightmare({ show: true });
+// import Nightmare from 'nightmare'
+// const nightmare = Nightmare({ show: true });
+import $ from 'jquery'
 
-function search_all_posts(url) {
-    return nightmare
-        .goto(url)
+export default {
+    // search_all_posts: function search_all_posts(url)
+    // {
+    //     return nightmare
+    //         .goto(url)
+    // },
+
+    getAndFilter: function getAndFilter(url, className) {
+        let data = $.get(url);
+        return data.getElementsByClassName(className);
     }
-
-module.exports = {
-    search_all_posts: search_all_posts
-};
+}

@@ -7,6 +7,7 @@
     {% if category.type == "for_sale" %}
           For Sale: {{ category.display_name }}
     {% endif %}
+    {% load render_bundle from webpack_loader %}
 {% endblock %}
 
 {% block content %}
@@ -17,6 +18,9 @@
     {% endif %}
     {% if category.type == "for_sale" %}
         <h2>{{ category.display_name }} For Sale</h2>
+        <script>
+            const craigslist_url = "https://charlottesville.craigslist.org/d/" + "{{ category.craigslist_url_adder }}";
+        </script>
     {% endif %}
 </div>
 
@@ -60,6 +64,8 @@
 
 </div>
 
+    {% render_bundle 'facebook_get_posts' %}
+    {% render_bundle 'craigslist_get_posts' %}
 
 
 {% endblock %}

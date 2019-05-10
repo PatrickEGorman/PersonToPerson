@@ -9,7 +9,9 @@ module.exports = {
     index: '../js/index',
     facebook_login: '../js/Api/Facebook/login',
     generic_get_posts: '../js/Api/Generic/get_posts',
-    facebook_get_posts: '../js/Api/Facebook/get_posts'
+    facebook_get_posts: '../js/Api/Facebook/get_posts',
+    craigslist_get_posts: '../js/Api/Craigslist/get_posts',
+
   },
   mode:'development',
 
@@ -42,12 +44,9 @@ module.exports = {
     alias: {
       react: path.resolve(__dirname, 'node_modules/react'),
       react_dom: path.resolve(__dirname, 'node_modules/react-dom'),
-      nightmare: path.resolve(__dirname, 'node_modules/nightmare')
+      nightmare: path.resolve(__dirname, 'node_modules/nightmare'),
+      jquery: path.resolve(__dirname, 'node_modules/jquery')
     }
   },
-  node: {
-    fs: 'empty',
-    child_process: 'empty'
-  }
-
+  target: "node"
 };
