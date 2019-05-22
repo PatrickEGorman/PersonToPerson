@@ -11,7 +11,8 @@ export default {
     // },
 
     getAndFilter: function getAndFilter(url, className) {
-        let data = $.get(url);
-        return data.getElementsByClassName(className);
+        let el = document.createElement( 'html' );
+        el.innerHTML = $.get(url);
+        return el.getElementsByClassName(className);
     }
 }

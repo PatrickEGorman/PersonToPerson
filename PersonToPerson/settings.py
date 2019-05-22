@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'static',
-    'apps.CompareExternal',
     'apps.Home',
     'apps.MarketPlaces',
     'apps.PostingOrganizer',
